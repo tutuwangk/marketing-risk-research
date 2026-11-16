@@ -1,0 +1,24 @@
+{
+  "bo_tabnet": {
+    "n_d": 35,
+    "n_a": 35,
+    "n_steps": 7,
+    "gamma": 1.2172527944415399,
+    "lambda_sparse": 7.260258058215811e-06,
+    "lr": 0.011363019309001939,
+    "mask_type": "entmax",
+    "cat_emb_dim": 2,
+    "batch_size": 256
+  },
+  "bo_lgbm": {
+    "n_estimators": 3000,
+    "learning_rate": 0.01999884853243124,
+    "num_leaves": 7,
+    "min_child_samples": 10,
+    "subsample": 0.7525782818387294,
+    "subsample_freq": 1,
+    "colsample_bytree": 0.4,
+    "reg_lambda": 10.0,
+    "verbose": -1
+  }
+}

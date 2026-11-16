@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["task_id", "text_quality", "market_sensing", "brand_management", "customer_relationship", "channel_management", "product_development", "marketing_communication", "digital_marketing"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "text_quality": {"type": "string", "enum": ["ok", "incomplete", "garbled"]},
+    "market_sensing": {"$ref": "#/$defs/dimension"},
+    "brand_management": {"$ref": "#/$defs/dimension"},
+    "customer_relationship": {"$ref": "#/$defs/dimension"},
+    "channel_management": {"$ref": "#/$defs/dimension"},
+    "product_development": {"$ref": "#/$defs/dimension"},
+    "marketing_communication": {"$ref": "#/$defs/dimension"},
+    "digital_marketing": {"$ref": "#/$defs/dimension"}
+  },
+  "$defs": {
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "evidence", "reason"],
+      "properties": {
+        "level": {"type": "integer", "enum": [0, 1, 2, 3, 4]},
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["page", "quote"],
+            "properties": {
+              "page": {"type": "integer"},
+              "quote": {"type": "string"}
+            }
+          }
+        },
+        "reason": {"type": "string"}
+      }
+    }
+  }
+}
